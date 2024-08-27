@@ -25,7 +25,7 @@ The economic state of our country has been so high lately.  I had these question
 6. What are the implications of a negative correlation between crude oil prices and inflation for Nigeria’s economy?
 
 ## Dataset
-The dataset was gotten from [Kaggle](https://www.kaggle.com/datasets/iamhardy/nigeria-inflation-rates), a website that contains different datasets that helps anyone practice their skills in data analysis, data science and other related fields. There, you can find everything you need to know about the dataset. 
+The dataset was gotten from [Kaggle](https://www.kaggle.com/datasets/iamhardy/nigeria-inflation-rates) -  a website that contains different datasets that helps anyone practice their skills in data analysis, data science and other related fields. There, you can find everything you need to know about the dataset. 
 
 ## Data Cleaning and Analysis
 ### 1. **Data Cleaning with Microsoft Excel:**
