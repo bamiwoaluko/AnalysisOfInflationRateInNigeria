@@ -149,8 +149,7 @@ To better understand the results from the PostgreSQL analysis and to present the
 - Inflation Rate Trends: I used Python to visualize the trend in inflation rates from 2008 to 2024. This line chart provides a clear picture of how inflation has changed over the years, highlighting periods of high and low inflation.
 ![image](https://github.com/user-attachments/assets/d2d9b8f5-f97a-439b-bf47-2ea058025c4b)
 
-As we can see in the chart, the inflation rate spiked after the year 2016. This led me to find out the difference in inflation rates between the years 2008-2016 and 2017-2024 [during my analysis](https://github.com/bamiwoaluko/AnalysisOfInflationRateInNigeria?tab=readme-ov-file#3-data-analysis-in-postgresql-)
-
+As we can see in the chart, the inflation rate spiked after the year 2016. This led me to find out the difference in inflation rates between the years 2008-2016 and 2017-2024 during my analysis
 - Correlation Analysis: With the use of scatter plots, I visualized the correlation between crude oil prices and inflation rates. This helped illustrate the relationship and showed how inflation rates responded to changes in oil prices.
 ![image](https://github.com/user-attachments/assets/eaf5cd7d-426a-4956-b703-6c94aace6abb)
 
