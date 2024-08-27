@@ -1,14 +1,19 @@
 # Nigerian Inflation Rate Analysis
 ![image](https://github.com/user-attachments/assets/671a18f4-1358-4746-9449-265da6c98b53)
 
+## Key Insights
+- Negative Correlation Between Crude Oil Prices and Inflation: The regression analysis reveals a negative correlation between crude oil prices and inflation rates. This suggests that as oil prices decrease, inflation rates tend to rise, highlighting the complex dynamics between global oil markets and local economic conditions in Nigeria.
+
+- Sectoral Sensitivity to Oil Prices: Among the various CPI components, the energy sector showed the highest sensitivity to changes in crude oil prices. This indicates that fluctuations in oil prices have a significant impact on energy costs, which in turn affects the overall inflation rate.
+
+- Volatility Analysis: The crude oil market's volatility significantly impacts Nigeria's inflation rates, given the country's reliance on oil exports. This analysis can help policymakers understand the need for diversity in  economic strategies to reduce the risks associated with oil price volatility.
 
 ## Table of Content
 - [Project Overview](#project-overview)
 - [Questions the Analysis Answers](#questions-the-analysis-answers)
 - [Dataset](#dataset)
-- [Data CLeaning and Analysis](#data-cleaning-and-analysis)
+- [Data Cleaning and Analysis](#data-cleaning-and-analysis)
 - [Data Visualization with Python](#data-visualization-with-python)
-- [Key Insights](#key-insights)
 - [Conclusion](#conclusion)
 
 ## Project Overview
@@ -159,12 +164,6 @@ This plot also confirms the analysis that there is a weak negative relationship 
 
 ![image](https://github.com/user-attachments/assets/37d566d1-1a42-4d9b-aa0b-07eddcb52524)
 
-## Key Insights
-- Negative Correlation Between Crude Oil Prices and Inflation: The regression analysis revealed a negative correlation between crude oil prices and inflation rates. This suggests that as oil prices decrease, inflation rates tend to rise, highlighting the complex dynamics between global oil markets and local economic conditions in Nigeria.
-
-- Sectoral Sensitivity to Oil Prices: Among the various CPI components, the energy sector showed the highest sensitivity to changes in crude oil prices. This indicates that fluctuations in oil prices have a significant impact on energy costs, which in turn affects the overall inflation rate.
-
-- Volatility Analysis: The crude oil market's volatility significantly impacts Nigeria's inflation rates, given the country's reliance on oil exports. This analysis can help policymakers understand the need for diversity in  economic strategies to reduce the risks associated with oil price volatility.
 
 ## Conclusion
 This project provided a comprehensive analysis of Nigeria's inflation dynamics over the past two decades. By leveraging data cleaning techniques, PostgreSQL for database management, and Python for data visualization, I was able to derive meaningful insights into how crude oil prices influence various sectors of the Nigerian economy. The findings highlight the importance of robust economic policies that can withstand global market fluctuations, particularly for a country that is  heavily reliant on oil exports.
