@@ -1,4 +1,6 @@
 # Nigerian Inflation Rate Analysis
+![image](https://github.com/user-attachments/assets/671a18f4-1358-4746-9449-265da6c98b53)
+
 
 ## Table of Content
 - [Project Overview](#project-overview)
@@ -59,7 +61,7 @@ CREATE TABLE InflationRates (
 ![Screenshot 2024-08-27 211833](https://github.com/user-attachments/assets/9058ef16-f839-40c4-867d-e782ee387a17) ![Screenshot 2024-08-27 212923](https://github.com/user-attachments/assets/b4dafff2-bef3-4640-99f6-4418fc0e470b)
 
 
-### 3. **Data Analysis in PostgreSQL:**
+### 3. **Data Analysis in PostgreSQL :**
 After I sucsessfully imported the dataset into PostgreSQL, I began analyzing the data to unveil trends and insights. This analysis focused on several key areas:
 
 - Inflation Rate Comparison: I compared inflation rates between two distinct periods, 2008-2016 and 2017-2024, to understand how inflation has evolved over time.
@@ -147,7 +149,7 @@ To better understand the results from the PostgreSQL analysis and to present the
 - Inflation Rate Trends: I used Python to visualize the trend in inflation rates from 2008 to 2024. This line chart provides a clear picture of how inflation has changed over the years, highlighting periods of high and low inflation.
 ![image](https://github.com/user-attachments/assets/d2d9b8f5-f97a-439b-bf47-2ea058025c4b)
 
-As we can see in the chart, the inflation rate spiked after the year 2016. This led me to find out the difference in inflation rates between the years 2008-2016 and 2017-2024 [during my analysis](#data-analysis-in-postgresql:)
+As we can see in the chart, the inflation rate spiked after the year 2016. This led me to find out the difference in inflation rates between the years 2008-2016 and 2017-2024 [during my analysis](#data-analysis-in-postgresql)
 
 - Correlation Analysis: With the use of scatter plots, I visualized the correlation between crude oil prices and inflation rates. This helped illustrate the relationship and showed how inflation rates responded to changes in oil prices.
 ![image](https://github.com/user-attachments/assets/eaf5cd7d-426a-4956-b703-6c94aace6abb)
