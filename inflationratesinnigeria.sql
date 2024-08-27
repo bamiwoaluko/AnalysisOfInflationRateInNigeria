@@ -1,3 +1,4 @@
+--creating table
 CREATE TABLE InflationRates (
     Year integer,
 	Month text, 
