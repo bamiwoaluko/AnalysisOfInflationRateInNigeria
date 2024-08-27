@@ -1,14 +1,37 @@
 # Nigerian Inflation Rate Analysis
+
+## Table of Content
+- [Project Overview](#project-overview)
+- [Questions the Analysis Answers](#questions-the-analysis-answers)
+- [Dataset](#dataset)
+- [Data CLeaning and Analysis](#data-cleaning-and-analysis)
+- [Data Visualization with Python](#data-visualization-with-python)
+- [Key Insights](#key-insights)
+- [Conclusion](#conclusion)
+
 ## Project Overview
 This project explores the dynamics of inflation in Nigeria from 2008 to 2024. It focuses on how key economic indicators such as crude oil prices, production levels, and various Consumer Price Index (CPI) components influence inflation rates. Using a structured approach, I cleaned the dataset, imported it into a PostgreSQL database, performed a comprehensive analyses, and visualized the results using Python. This README file contains details of the entire process, the challenges I encountered, and all of the findings I made from the analysis.
 
-## Data Cleaning, Preparation and Analysis
+## Questions the Analysis Answers
+The economic state of our country has been so high lately.  I had these questions in mind, so I decided to answer them with this analyis.
+
+1. How have inflation rates in Nigeria changed over time from 2008 to 2024?
+2. What is the relationship between crude oil prices and inflation rates in Nigeria?
+3. How do various CPI components (such as food, energy, health, transport, communication, and education) respond to changes in crude oil prices?
+4. Which sector has the highest risk in response to crude oil price changes?
+5. How did inflation rates differ between the periods 2008-2016 and 2017-2024?
+6. What are the implications of a negative correlation between crude oil prices and inflation for Nigeria’s economy?
+
+## Dataset
+The dataset was gotten from [Kaggle](https://www.kaggle.com/datasets/iamhardy/nigeria-inflation-rates), a website that contains different datasets that helps anyone practice their skills in data analysis, data science and other related fields. There, you can find everything you need to know about the dataset. 
+
+## Data Cleaning and Analysis
 ### 1. **Data Cleaning with Microsoft Excel:**
 The datset was not clean initially it inculeded some missing values and incorrect data formats. I used *Microsoft Excel* to perform the following cleaning tasks:
 
 - Removed Rows with Missing Values: I identified rows with missing values and decided to replace them. For numerical columns such as crude_oil_price, production, and export, I replaced missing values with the median of the column to avoid skewing the data.
 - Formatted Data Types: I ensured all data types were consistent. For instance, months were converted from numeric values to their respective names (e.g., 1 to January) to have better readability and to conduct a better analysis .
-- Checked for Duplicates: *Fortunately* for me, there were no missing roles in the dataset.
+- Checked for Duplicates: *Fortunately* for me, there were no duplicates in the dataset.
 
 ### 2. **Importing Data into PostgreSQL:**
 With a cleaned dataset, I moved on to PostgreSQL for more advanced data manipulation and analysis. Using pgAdmin 4, I created a new table to store the dataset. Here is how I did it:
@@ -46,6 +69,8 @@ round(avg(case when year between 2008 and 2016 then inflation_rate end)::numeric
 round(avg(case when year between 2017 and 2024 then inflation_rate end)::numeric, 2) as avg_inflationrate_2017_2024
 from inflationrates;
 ```
+*Result*
+
 The analysis revealed that there was a huge increase in inflation rates from the year 2017-2024 compared to the year 2008-2016
 ![Screenshot 2024-08-27 213747](https://github.com/user-attachments/assets/9d47ddd8-dcda-4aa2-a684-dcc427654a0d)
 
@@ -64,7 +89,7 @@ from inflationrates;
 
 ![Screenshot 2024-08-27 215407](https://github.com/user-attachments/assets/50dc20dc-cb8e-40da-9128-2bb2686f44fd) ![Screenshot 2024-08-27 220228](https://github.com/user-attachments/assets/df8300f1-875d-470d-bbd2-93428cbc6d67)
 
-Performing these analyses revealed to me that there is a weak negative correlation, and an inverse relationship between inflation rates and the price of crude oil sold. This means when the price of crude oil sold to foriegn parties increases, the rate of inflation decreases. The correlation is a weak one which suggests the price crude oil is sold does not, in all cases, affect the the rate of inflation in Nigeria
+Performing these analyses revealed to me that there is a weak negative correlation, and an inverse relationship between inflation rates and the price of crude oil sold. This means when the price of crude oil sold to foriegn parties increases, the rate of inflation decreases. The correlation is a weak one which suggests the price crude oil is sold does not, in all cases, affect the the rate of inflation in Nigeria.
 - Sectoral Risk Analysis: I also carried out sectoral risk analysis to determine which CPI component has the highest risk with respect to crude oil prices. This analysis is very important to understand how vulnerable different sectors are to the volatility of oil prices.
 ``` sql
 select avg(cpi_health) as avg_cpi_health,
@@ -115,19 +140,30 @@ from
 From this result, we can conclude the Energy sector has the highest risk when it comes to changes in crude oil prices because it has the highest absolute correlation amongst the other sectors (-0.16) and it has the steepest negative slope (-0.74)
 **NOTE** the (-) only indicates if the correlation is positive or negative. 
 
-##Data Visualization with Python
+## Data Visualization with Python
 To better understand the results from the PostgreSQL analysis and to present them in a more digestible format, I used Python's visualization libraries, such as Matplotlib and Seaborn.
 
-Step 4: Visualizing the Results
-Inflation Rate Trends: I used Python to visualize the trend in inflation rates from 2008 to 2024. This line chart provided a clear picture of how inflation has changed over the years, highlighting periods of high and low inflation.
-Correlation Analysis: Using scatter plots, I visualized the correlation between crude oil prices and inflation rates. This helped illustrate the relationship and showed how inflation rates responded to changes in oil prices.
-Regression Analysis Visualization: I created regression plots for each CPI component to visualize the sectoral risk analysis. These plots clearly depicted how each sector's CPI responded to changes in crude oil prices, allowing for a straightforward comparison of risk levels across sectors.
-Key Insights
-Negative Correlation Between Crude Oil Prices and Inflation: The regression analysis revealed a negative correlation between crude oil prices and inflation rates. This suggests that as oil prices decrease, inflation rates tend to rise, highlighting the complex dynamics between global oil markets and local economic conditions in Nigeria.
+### Visualizing the Results
+- Inflation Rate Trends: I used Python to visualize the trend in inflation rates from 2008 to 2024. This line chart provides a clear picture of how inflation has changed over the years, highlighting periods of high and low inflation.
+![image](https://github.com/user-attachments/assets/d2d9b8f5-f97a-439b-bf47-2ea058025c4b)
 
-Sectoral Sensitivity to Oil Prices: Among the various CPI components, the energy sector showed the highest sensitivity to changes in crude oil prices. This indicates that fluctuations in oil prices have a significant impact on energy costs, which in turn affects the overall inflation rate.
+As we can see in the chart, the inflation rate spiked after the year 2016. This led me to find out the difference in inflation rates between the years 2008-2016 and 2017-2024 [during my analysis](#data-analysis-in-postgresql)
 
-Volatility Analysis: The crude oil market's volatility significantly impacts Nigeria's inflation rates, given the country's reliance on oil exports. This analysis can help policymakers understand the need for diversified economic strategies to mitigate risks associated with oil price volatility.
+- Correlation Analysis: With the use of scatter plots, I visualized the correlation between crude oil prices and inflation rates. This helped illustrate the relationship and showed how inflation rates responded to changes in oil prices.
+![image](https://github.com/user-attachments/assets/eaf5cd7d-426a-4956-b703-6c94aace6abb)
 
-Conclusion
-This project provided a comprehensive analysis of Nigeria's inflation dynamics over the past two decades. By leveraging data cleaning techniques, PostgreSQL for database management, and Python for data visualization, I was able to derive meaningful insights into how crude oil prices influence various sectors of the Nigerian economy. The findings highlight the importance of robust economic policies that can withstand global market fluctuations, particularly in a country heavily reliant on oil exports.
+This plot also confirms the analysis that there is a weak negative relationship between rate of inflation and crude oil prices.
+
+- Regression Analysis Visualization: I created regression plots for each CPI component to visualize the sectoral risk analysis. These plots clearly depicted how each sector's CPI responded to changes in crude oil prices, allowing for a straightforward comparison of risk levels across sectors.
+
+![image](https://github.com/user-attachments/assets/37d566d1-1a42-4d9b-aa0b-07eddcb52524)
+
+## Key Insights
+- Negative Correlation Between Crude Oil Prices and Inflation: The regression analysis revealed a negative correlation between crude oil prices and inflation rates. This suggests that as oil prices decrease, inflation rates tend to rise, highlighting the complex dynamics between global oil markets and local economic conditions in Nigeria.
+
+- Sectoral Sensitivity to Oil Prices: Among the various CPI components, the energy sector showed the highest sensitivity to changes in crude oil prices. This indicates that fluctuations in oil prices have a significant impact on energy costs, which in turn affects the overall inflation rate.
+
+- Volatility Analysis: The crude oil market's volatility significantly impacts Nigeria's inflation rates, given the country's reliance on oil exports. This analysis can help policymakers understand the need for diversity in  economic strategies to reduce the risks associated with oil price volatility.
+
+## Conclusion
+This project provided a comprehensive analysis of Nigeria's inflation dynamics over the past two decades. By leveraging data cleaning techniques, PostgreSQL for database management, and Python for data visualization, I was able to derive meaningful insights into how crude oil prices influence various sectors of the Nigerian economy. The findings highlight the importance of robust economic policies that can withstand global market fluctuations, particularly for a country that is  heavily reliant on oil exports.
