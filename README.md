@@ -1,4 +1,4 @@
-# Nigerian Inflation Rate Analysis
+# Nigeria Inflation Rate Analysis
 ![image](https://github.com/user-attachments/assets/671a18f4-1358-4746-9449-265da6c98b53)
 
 ## Key Insights
